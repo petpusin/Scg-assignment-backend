@@ -1,0 +1,429 @@
+{
+	"info": {
+		"_postman_id": "fe45a5fc-e408-44ae-a9be-49756aca1626",
+		"name": "scg",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16315017"
+	},
+	"item": [
+		{
+			"name": "assignment1",
+			"item": [
+				{
+					"name": "send email by sendgrid with templateId",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"to\": \"attachai@wdepic.com\",\n    \"from\": \"attachai@wdepic.com\",\n    \"message\": \"TestMessage\",\n    \"template_id\": \"d-6301aedd5a1a4211ad6c7a6add02675b\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/sendgrid/send-email",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"sendgrid",
+								"send-email"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "send email by sendgrid basic",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"to\": \"attachai@wdepic.com\",\n    \"from\": \"attachai@wdepic.com\",\n    \"message\": \"TestMessage\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/sendgrid/send-email",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"sendgrid",
+								"send-email"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "assignment2",
+			"item": [
+				{
+					"name": "group",
+					"item": [
+						{
+							"name": "create group",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Others\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/contact-list/group/create",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"contact-list",
+										"group",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "soft delete group",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/contact-list/group/delete/:id",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"contact-list",
+										"group",
+										"delete",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "edit group",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Other\",\n    \"groupId\": 4\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/contact-list/group/edit",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"contact-list",
+										"group",
+										"edit"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "find all group",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/contact-list/group",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"contact-list",
+										"group"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "contact",
+					"item": [
+						{
+							"name": "find all contact",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/contact-list/group/:id/contact/",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"contact-list",
+										"group",
+										":id",
+										"contact",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "find One contact",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/contact-list/contact/:id",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"contact-list",
+										"contact",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create contact",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"MyFan\",\n    \"birthDate\": \"1989-04-04\",\n    \"phone\": [\n        \"+66094328204\",\n        \"66094328204\"\n    ],\n    \"email\": [\n        \"att@gmail.com\",\n        \"att@gmail.com\"\n    ],\n    \"url\": [\n        \"www.com.ocom\",\n        \"www.com.ocom\"\n    ],\n    \"logo\": \"images/c79ec17f-93c7-4a23-9675-f2e5ddb69038.png\",\n    \"groupId\": 4\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/contact-list/contact/create",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"contact-list",
+										"contact",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "edit contact",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"Dad\",\n    \"lastName\": \"PP\",\n    \"birthDate\": \"1999-04-04\",\n    \"phone\": [\n        \"0981920832\"\n    ],\n    \"email\": [\n        \"att@gmail.com\"\n    ],\n    \"url\": [\n        \"www.com.ocom\"\n    ],\n    \"contactId\": 2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/contact-list/contact/edit",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"contact-list",
+										"contact",
+										"edit"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "soft delete contact",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"Dad\",\n    \"lastName\": \"PP\",\n    \"birthDate\": \"1999-04-04\",\n    \"phone\": [\n        \"0945835726\"\n    ],\n    \"email\": [\n        \"att@gmail.com\"\n    ],\n    \"url\": [\n        \"www.com.ocom\"\n    ],\n    \"contactId\": 2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/contact-list/contact/edit",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"contact-list",
+										"contact",
+										"edit"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "upload image",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/Users/wdepiccoding/Downloads/Screen Shot 2564-03-12 at 12.52.12.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/contact-list/upload",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"contact-list",
+										"upload"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get image",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/Users/wdepiccoding/Downloads/Screen Shot 2564-03-12 at 12.52.12.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/contact-list/images/b55317f4-ecdf-405a-8803-ca06688675e1.png",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"contact-list",
+										"images",
+										"b55317f4-ecdf-405a-8803-ca06688675e1.png"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "assignment3",
+			"item": [
+				{
+					"name": "calculator tax",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"netIncome\": \"90\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/calculate",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"calculate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
