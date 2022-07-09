@@ -29,7 +29,7 @@ export class ContactListService {
     async getAllGroup(): Promise<Group[]> {
         return await this.groupRepository
             .createQueryBuilder('group')
-            .select(['group.id AS id', 'group.name AS name', ' SUM(contact.group) As totalContact'])
+            .select(['group.id AS id', 'group.name AS name', ' COUNT(contact.group) As totalContact'])
             .where('group.deletedAt is NULL')
             .leftJoin('group.contact', 'contact')
             .groupBy('id')
