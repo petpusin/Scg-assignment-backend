@@ -75,3 +75,19 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+# Assignment 1 
+#### จะมีการส่ง email ได้ทั้ง2 แบบ คือ 
+ 1. แบบปกติ
+ 2. แบบใช้ templateId ที่ระบุบไว้ใน postman
+ # Assignment 2
+ Contac-list เป็น API ที่มีทั้ง CRUD โดยใช้ postgresql บน Docker-compose และมีการใช้ AWS S3 ในการเก็บรูปภาพของ ผู้ติดต่อไว้ เพราะไม่ควรเก็บรูปเข้า DB โดยตรง
+ 
+
+# Assignment 3 
+เป็นการคำนวนภาษีแบบปกติ โดยใช้ conditiond กับ switch case 
+
+
+# เอกสารที่ แนบเพิ่มเติม
+## ER Diagram
+![ER Diagram](https://github.com/petpusin/Scg-assignment-backend/blob/main/contact-list-er.png?raw=true)
